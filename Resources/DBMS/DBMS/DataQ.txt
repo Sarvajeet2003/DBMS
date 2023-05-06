@@ -1,0 +1,165 @@
+use `Sky_Support`;
+
+INSERT INTO `Contacts`
+VALUES
+('C001',null,'9811668049','Austin_Bergstrom_Airport@gmail.com',null,null,null,'Austin','Texas','78719','USA'),
+('C002',null,'8800995991','Birmingham_International_Airport@gmail.com',null,null,null,'Birmingham','UK','B26 3QJ','England'),
+('C003',null,'9868812208','Cape_Town_International_Airport@gmail.com',null,null,null,'Cape Town','Western Cape province','7490','South_Africa'),
+('C004',null,'7698754678','Chandigarh_International_Airport@gmail.com',null,null,null,'Chandigarh','Chandigarh','160003','India'),
+('C005',null,'3467932577','O-Hare_International_Airport@gmail.com',null,null,null,'Chicago','Illinois','60656','USA'),
+('C006',null,'8311027800','Indira_Gandhi_International_Airport@gmail.com',null,null,null,'Delhi','Delhi','1100037','India'),
+('C007',null,'8510025900','FukushimaAirport@gmail.com',null,null,null,'Sukagawa','Fukushima','9636304','Japan'),
+('C008',null,'8368132710','José_Martí@gmail.com',null,null,null,'Havana','Havana','219','Cuba'),
+('C009',null,'9999996702','Sanganeer@gmail.com',null,null,null,'Jaipur','Rajasthan','302039','India'),
+('C010',null,'7369934006','London-City_Airport@gmail.com',null,null,null,'London','UK','E162PX','Europe'),
+('C011',null,'8765438889','S.SeewoosagurRamInternational@gmail.com',null,null,null,'Port Louis','Port Louis','11607','Mauritius'),
+('C012',null,'8888567846','Tullamarine@gmail.com',null,null,null,'Vicoria','Melbourne','3043','Australia'),
+('C013',null,'9911226547','JohnFKennedyNY@gmail.com',null,null,null,'Queens','New York','11430','USA'),
+('C014',null,'8876535868','CharlesdeGaulle@gmail.com',null,null,null,'Paris','France ','95704','Europe'),
+('C015',null,'3476564899','PhuketInternatiionalAirport@gmail.com',null,null,null,'Phuket','Island','83110','Thailand'),
+('C016',null,'9987656498','Vancouver_International@gamil.com',null,null,null,'Vancouver','British_Columbia','821','Canada'),
+('C017',null,'6574897659','SkyHarbor_Phoenix@gmail.com',null,null,null,'Phoenix','Arizona','85034','USA'),
+('C018',null,'6575344888','VáclavHavelAirport@gmail.com',null,null,null,'Prague','Czech_Republic','161 00 ','Europe'),
+('C019',null,'3807645899','LindbergFieldInternational@gmail.com',null,null,null,'San Diego','California','92101','USA'),
+('C020',null,'8989876564','BillyBishopTorontoCityAirport',null,null,null,'Toronto','Ontario','92101','Canada'),
+('C021','8431541465','3807522865','vistarafly@gmail.com',null,null,null,null,null,null,null),
+('C022','9297468665','7629564544','singapore_air@hotmail.com',null,null,null,null,null,null,null),
+('C023','8542865465','3458258245','Emirates_airlines@gmail.com',null,null,null,null,null,null,null),
+('C024','8834745628','98346942I3','quatar@yahoo.com',null,null,null,null,null,null,null),
+('C025','3746295834','3287429452','FlyToNewZealand@gmail.com',null,null,null,null,null,null,null),
+('C026','346-813-2995', '1-803-468-3355', 'alex@hotmail.com','12','Hill St','3','Manhattan','New York','10001','USA'),
+('C027','987-035-2889', '1-786-050-4082', 'sam67@gmail.com', '4','Main St','1','Kirby','Texas','78219','USA'),
+('C028','928-044-9515', '1-109-696-2052', 'sarah@gmail.com', '5','Second St','2','London','London','11112','UK'),
+('C029','629-631-4980', '1-508-840-2721', 'gurpreet@gmail.com', '9','Hill St','3','Toronto','Ontario','10001','Cananda'),
+('C030','822-872-3751', '1-490-573-8493', 'justin@hotmail.com', '22','First St','3','Manhattan','New York','10001','USA'),
+('C031','758-963-6852', '1-973-733-5791', 'vanshika@gmail.com', '32','Khan Market','9','New Delhi','New Delhi','11002','India'),
+('C032','507-889-4345', '1-357-975-2734', 'manvik@gmail.com', '42','Hudson Lane','4','New Delhi','New Delhi','11004','India'),
+('C033','128-302-8983', '1-934-106-3413', 'ritesh@gmail.com', '31','Janpath','12','New Delhi','New Delhi','11005','India'),
+('C034','164-392-4867', '1-632-882-1370', 'kunal@yahoo.com', '55','Malviya Nagar','10','New Delhi','New Delhi','110020','India'),
+('C035','956-813-6000', '1-978-174-3790', 'yugansh@hotmail.com', '44','Rajinder Nagar','16','New Delhi','New Delhi','110015','India'),
+('C036','123-983-3111','855-632-5412',"LeonardCooper@gmail.com",'1','Delli','3','Rhode Island','USA',1100240,'America'),
+('C037','123-986-6111','1-632-882-4321',"Jessica@gmail.com",'5','Square mark','3','Washingtion','USA',1100241,'America'),
+('C038','123-984-4111','1-643-111-1222',"Louis@gmail.com",'10','Nebraska','7','Kirby','USA',1100241,'America'),
+('C039','123-999-3111','1-675-832-9999',"Akon@gmail.com",'11','Cape 1','6','Northern cape','South Africa',1100241,'Africa'),
+('C040','123-981-2211','1-656-852-4444',"jean@gmail.com",'15','Paris lane 1','4','Paris','Paris','1100241','France'),
+('C041','145-400-2511','1-689-422-8989', 'vlad@gmail.com','04','Central St','3','Moscow','Oryol','10231','Russia'),
+('C042','156-502-2161','1-669-562-2311', 'tommy@yahoo.com','41','Peaky Lane','9','Birmingham','England','23001','UK'),
+('C043','167-601-2191','1-676-652-7676', 'cruz@hotmail.com','89','First St','1','Hidalgo','Pachuca','14401','Mexico'),
+('C044','178-789-9111','1-686-982-7654', 'javier@gmail.com','54','Main St','2','Galicia','Lugo','10541','Spain'),
+('C045','123-894-7141','1-696-752-9898', 'julia@gmail.com','22','Third St','7','Carson City','Nevada','10341','USA'),
+('C046','192-143-7985','1-214-878-8911', 'goibibo@gmail.com','12','Main St','7','Las Vegas','Nevada','10131','USA'),
+('C047','152-444-5555','1-220-570-2122', 'coxandkings@gmail.com','02','Main Market','1','Safdurjung Enclave','New Delhi','11050','India'),
+('C048','192-333-4444','1-218-389-1494', 'easytravel@gmail.com','31','Second St','2','Subhash Nagar','New Delhi','11030','India'),
+('C049','111-494-9994','1-321-513-3865', 'mmt@gmail.com','81','Fourth St','4','London','England','19491','UK'),
+('C050','122-891-6141','1-201-991-1753', 'expedia@gmail.com','44','Central St','2','Manchester','England','19321','UK'),
+('C051','101-804-0141','1-215-647-0834', 'worldtravel@gmail.com','11','Tenth Avenue','71','Liverpool','England','19241','UK'),
+('C052','113-114-5141','1-332-973-6429', 'happytravel@gmail.com','54','Central St','73','Chelsea','England','19111','UK'),
+('C053','191-119-9132','1-272-967-4263', 'intladven@gmail.com','82','First St','17','Manhattan','New York','10001','USA'),
+('C054','199-321-7321','1-203-681-8800', 'traveltime@gmail.com','92','Fifth St','91','Manhattan','New York','10001','USA'),
+('C055','191-167-7189','1-213-638-8875', 'gemvacay@gmail.com','11','Sixth St','44','Melbourne','Victoria','14331','Australia'),
+('C056','189-532-6785','1-308-701-7649', 'ariestravel@gmail.com','33','Seventh St','23','Geelong','Victoria','14342','Australia'),
+('C057','134-514-6141','1-510-230-5143', 'libratravel@gmail.com','44','Ninth St','34','Sale','Victoria','14249','Australia'),
+('C058','181-924-6941','1-313-315-1719', 'capricontravel@gmail.com','59','Eleventh St','45','Wiesbaden','Hesse','11155','Germany'),
+('C059','145-994-6641','1-205-216-6522', 'scorpiontravel@gmail.com','91','Main St','57','Frankfurt','Hesse','11144','Germany'),
+('C060','156-754-6541','1-516-381-5215', 'totemtravel@gmail.com','82','Sixth Avenue','55','Andheri West','Mumbai','11911','India'),
+('C061','111-711-6111','1-522-222-3333', 'goldentravel@gmail.com','71','Fifth Avenue','88','Bandara','Mumbai','11431','India');
+
+
+#Adding Airlines
+INSERT INTO `Airline`
+VALUES ('AL001', 'Vistara Airlines' ,'India',3,'ztrjt6' ,'C021'),
+ ('AL002', 'Singapore Airlines' ,'Singapore',4 ,'hwt76t','C022'),
+( 'AL003','Emirates','Dubai',3,'2qu7t7' ,'C023'),
+ ('AL004', 'Quatar Airways' ,'Amman ',3 ,'jwey347','C024'),
+ ('AL005', 'Air New Zealand' ,'New Zealand',3,'aebc64','C025' );
+
+#Adding Aircraft
+INSERT INTO `Aircraft`
+VALUES ('AC001', 640 ,'AL001', '2020-12-01 12:32:04'),
+ ('AC002', 710 ,'AL001', '2020-10-02 01:30:04'),
+ ( 'AC003',810,'AL001', '2020-11-12 07:05:30'),
+ ('AC004', 632 ,'AL002', '2020-02-18 12:32:04'),
+ ('AC005', 745 ,'AL002', '2020-05-07 01:30:04'),
+ ( 'AC006',590,'AL002', '2020-09-27 09:20:03'),
+ ( 'AC007',802,'AL002', '2020-06-28 12:11:30'),
+ ('AC008', 612 ,'AL003', '2020-07-08 18:15:22'),
+ ('AC009', 711 ,'AL003', '2020-08-16 20:40:30'),
+ ( 'AC010',501,'AL003', '2020-09-11 19:45:45'),
+ ('AC011', 666 ,'AL004', '2020-12-10 09:55:04'),
+ ('AC012', 567 ,'AL004', '2020-10-19 12:32:04'),
+ ('AC013', 745 ,'AL004', '2020-09-02 01:30:04'),
+( 'AC014',367,'AL005', '2020-01-29 07:05:30'),
+('AC015', 456 ,'AL005', '2020-09-25 12:32:04'),
+ ('AC016', 510 ,'AL005', '2020-04-14 01:30:04');
+ 
+ #Adding Passenger
+INSERT INTO `Passenger` 
+VALUES
+('P001','Alex','Fitzgerald','Smith','1991-01-15','30','M','American', 'C026','hello123'),
+('P002','Sam','Baines','Rogers','1994-03-13','27','M','American', 'C027','pass1234'),
+('P003','Sarah','Erin','Conner','1988-02-25','34','F','English', 'C028','uk1234'),
+('P004','Gupreet',null,'Singh','1996-04-22','25','F', 'Canadian', 'C029','keyword987'),
+('P005','Justin','Michael','Ross','1999-07-11','20','M','Canadian','C030','mypass132'),
+('P006','Vanshika',null,'Gupta','2001-01-19','19','F', 'Indian', 'C031','password132'),
+('P007','Manvik',null,'Arya','2000-10-04','20','M', 'Indian', 'C032','ps1234'),
+('P008','Ritesh',null,'Panwar','2000-07-28','20','M', 'Indian', 'C033','psword123'),
+('P009','Kunal',null,'Mahour','2001-10-09','19','M','Indian', 'C034','psw567'),
+('P010','Yugansh',null,'Sharu','2001-11-13','19','M','Indian', 'C035','psw987'),
+('P011','Leonard',null,'Cooper','1985-01-18','36','M', 'American', 'C036','leonard1234'),
+('P012','Jessica',null,'Pearson','1972-09-18','49','F','American', 'C037','jessica987'),
+('P013','Louis','Marlow','Litt','1981-02-07','42','M','American', 'C038','louis666'),
+('P014','Akon',null,'Morris','1986-11-14','35','M','African', 'C039','akon12345'),
+('P015','Jean','Francis','Claude','1961-12-30','60','M','French', 'C040','jean786'),
+('P016','Vladmir','Vladimirovich','Putin','1952-10-07','60','M','Russian', 'C041','ourcountry'),
+('P017','Cillian','Thomas','Shelby','1981-12-30','40','M','English', 'C042','thomas321'),
+('P018','Penelope','Cruz','Sanchez','1974-04-28','46','F','Mexican', 'C043','pene1974'),
+('P019','Javier','Encinas ','Bardem ','1969-03-01','52','M','Spanish', 'C044','javi1969'),
+('P020','Julia','Fiona','Roberts','1967-10-28','53','F','American', 'C045','julia1967');
+
+
+# Travel Agencies
+INSERT INTO `Travel_Agency`
+VALUES
+('1000','Go Ibibio','C046','goibibo123'),
+('1001','Cox & Kings','C047','ckings567'),
+('1002','Easy Travel','C048','easytraveller123'),
+('1003','MakeMyTrip','C049','mmt321'),
+('1004','Expedia','C050','expedia987'),
+('1005','World Travel','C051','worldtravel870'),
+('1006','Happy Travel','C052','worldtravel870'),
+('1007','International Adventures','C053','intadven333'),
+('1008','Travel Time','C054','traveltime000'),
+('1009','Gem Vacations','C055','gemvacay007'),
+('1010','Aries Travel','C056','ariestravel786'),
+('1011','Libra Travel','C057','libratravel007'),
+('1012','Capricon Travel','C058','caprtravel123'),
+('1013','Scoprion Travel','C059','scorptravel666'),
+('1014','Totem Travel','C060','totemtravel555'),
+('1015','Golden Travel','C061','goldtravel111');
+
+#Airports
+INSERT INTO `Airport`
+VALUES ('AP001', 'Austin-Bergstrom Airport','Austin','USA','pass1','C001'),
+('AP002', 'Birmingham International Airport','Birmingham ','United Kingdom','pass2','C002'),
+('AP003', 'Cape Town International Airport','Cape Town','South Africa','pass3','C003'),
+('AP004', 'Chandigarh International Airport','Chandigarh','India','pass4','C004'),
+('AP005', 'O-Hare International Airport','Chicago ','USA','pass5','C005'),
+('AP006', ' Indira Gandhi International Airport','Delhi','India','pass6','C006'),
+('AP007', ' Fukushima Airport','Sukagawa','Japan','pass7','C007'),
+('AP008', 'José Martí International','Havana ','Cuba','pass8','C008'),
+('AP009','Sanganeer','Jaipur','India','pass9','C009'),
+('AP010','London-City_Airport','London','England','pass10','C010'),
+('AP011','S.Seewoosagur Ram International ','Port Louis','Mauritius','pass11','C011'),
+('AP012', 'Tullamarine','Melbourne','Australia','pass12','C012'),
+('AP013',' John F. Kennedy ','New York','USA','pass13','C013'),
+('AP014',' Charles de Gaulle','Paris','France','pass14','C014'),
+('AP015',' Phuket Internatiional Airport','Phuket','Thailand','pass15','C015'),
+('AP016',' Vancouver International','Vancouver','Canada','pass16','C016'),
+('AP017',' Sky Harbor International','Phoenix ','USA','pass17','C017'),
+('AP018',' Václav Havel Airport','Prague','Czech Republic','pass18','C018'),
+('AP019','Lindberg Field International ','San Diego','USA','pass19','C019'),
+('AP020','Billy Bishop Toronto City Airport','Toronto','Canada','pass20','C020');
+
+
+
+

@@ -1,0 +1,501 @@
+
+use `sky_support`;
+
+create table `aircraft`(
+`ac_id` int not null,
+`capacity` int not null,
+`company` int not null,
+`mfg_date` DATE not null,
+primary key (`ac_id`));
+
+create table `airline`(
+`al_id` int not null,
+`name` varchar(32) not null,
+`origin` varchar(32) not null,
+`total_planes` int not null,
+`password` varchar(16) not null,
+primary key (`al_id`));
+
+create table `airport`(
+`ap_id` int not null,
+`airport_name` varchar(128) not null,
+`city` varchar(64) not null,
+`country` varchar(64) not null,
+`contact` int not null,	
+`password` varchar(16) not null,
+primary key (`ap_id`));
+
+
+create table `passenger`(
+`p_id` int not null,
+`first_name` varchar(16) not null,
+`middle_name` varchar(16),
+`last_name` varchar(16),
+`age` int not null,
+`gender` varchar(16) not null,
+`address` varchar(64) not null,	
+`nationality` varchar(16) not null,
+`contact` int not null,
+`password` varchar(32) not null,
+primary key (`p_id`));
+
+create table `contact_details`(
+`c_id` int not null,
+`phone_no` varchar(16) not null,
+`telephone_no` varchar(16) not null,
+`email` varchar(32) not null,	
+`street_address` varchar(64) not null,
+primary key (`c_id`));
+
+create table `travel_agency`(
+`travelag_id` int not null,
+`discount` int not null,
+`name` varchar(64) not null,
+`contact` int not null,
+`password` varchar(16) not null,
+primary key (`travelag_id`));
+
+create table `discount`(
+`travelag_id` int not null,
+`title` varchar(32) not null,
+`amount` int not null,
+`description` varchar(128) not null);
+
+create table `ticket`(
+`booking_id` int not null,
+`flight_schedule` int not null,
+`passenger_id` int not null,
+`seat_no` varchar(8) not null,
+`airline_class` bit not null,
+`airfare` int not null,
+`status` bit not null,
+primary key (`booking_id`));
+
+
+CREATE TABLE `flight_schedule` (
+  `flight_id` int(11) NOT NULL,
+  `departure` int(11) NOT NULL,
+  `arrival` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `origin` int(11) NOT NULL,
+  `destination` int(11) NOT NULL,
+  `route_code` varchar(32) NOT NULL,
+  `Airfare` int(11) NOT NULL,
+  PRIMARY KEY (`flight_id`)
+);
+
+
+create table `transactions`(
+`t_id` int not null,
+`ticket` int not null,
+`total` int not null,
+`p_id` int not null,
+primary key (`t_id`));
+
+
+CREATE TABLE `contact_details` (
+  `c_id` int(11) NOT NULL,
+  `phone_no` varchar(16) NOT NULL,
+  `telephone_no` varchar(16) NOT NULL,
+  `email` varchar(32) NOT NULL,
+  `street_num` varchar(16) NOT NULL,
+  `street_name` varchar(16) NOT NULL,
+  `Building_num` varchar(16) NOT NULL,
+  `city` varchar(64) not null,
+  `state` varchar(64) not null,
+  `zip` int not null,
+  `country` varchar(64) not null,
+  PRIMARY KEY (`c_id`)
+);
+
+insert into `passenger` values(
+'01','Alex',null,'Smith','30','M','New York, USA', 'American', 1,'hello123');
+insert into `passenger` values(
+'02','Sam',null,'Rogers','27','M','Texas, USA', 'American', 2,'pass1234');
+insert into `passenger` values(
+'03','Sarah',null,'Conner','34','F','London, UK', 'English', 3,'uk1234');
+insert into `passenger` values(
+'04','Gupreet',null,'Singh','25','F','Toronto, Canada', 'Canadian', 4,'keyword987');
+insert into `passenger` values(
+'05','Justin',null,'Ross','21','M','Ontario, Canada', 'Canadian',5,'mypass132');
+insert into `passenger` values(
+'06','Vanshika',null,'Gupta','19','F','New Delhi, India', 'Indian', 6,'password132');
+insert into `passenger` values(
+'07','Manvik',null,'Arya','20','M','New Delhi, India', 'Indian', 9,'ps1234');
+insert into `passenger` values(
+'08','Ritesh',null,'Panwar','20','M','New Delhi, India', 'Indian', 8,'psword123');
+insert into `passenger` values(
+'09','Kunal',null,'Mahour','19','M','New Delhi, India', 'Indian', 7,'psw567');
+insert into `passenger` values(
+'10','Yugansh',null,'sharu','19','M','New Delhi, India', 'Indian', 10,'psw987');
+insert into `passenger` values(
+'11','Leonard',null,'Cooper','36','M','Rhode Island, USA', 'American', 13,'leonard1234');
+insert into `passenger` values(
+'12','Jessica',null,'Pearson','49','F','Washingtion, USA', 'American', 11,'jessica987');
+insert into `passenger` values(
+'13','Louis',null,'Litt','41','M','Nebraska, USA', 'American', 12,'louis666');
+insert into `passenger` values(
+'14','Akon',null,'Morris','35','M','Northen Cape, South Africa', 'African', 14,'akon12345');
+insert into `passenger` values(
+'15','Jean',null,'Claude','60','M','Paris, France', 'French', 15,'jean786');
+
+
+
+insert into `travel_agency` values(
+'1000','10','Go Ibibio','12345','goibibo123');
+insert into `travel_agency` values(
+'1001','14','Cox & Kings','54321','ckings567');
+insert into `travel_agency` values(
+'1002','5','Easy Travel','12398','easytraveller123');
+insert into `travel_agency` values(
+'1003','9','MakeMyTrip','19845','mmt321');
+insert into `travel_agency` values(
+'1004','20','Expedia','12675','expedia987');
+insert into `travel_agency` values(
+'1005','10','World Travel','12397','worldtravel870');
+insert into `travel_agency` values(
+'1006','30','Happy Travel','12397','worldtravel870');
+insert into `travel_agency` values(
+'1007','15','International Adventures','12000','intadven333');
+insert into `travel_agency` values(
+'1008','5','Travel Time','12999','traveltime000');
+insert into `travel_agency` values(
+'1009','25','Gem Vacations','89249','gemvacay007');
+insert into `travel_agency` values(
+'1010','20','Aries Travel','91299','ariestravel786');
+insert into `travel_agency` values(
+'1011','12','Libra Travel','91211','libratravel007');
+insert into `travel_agency` values(
+'1012','7','Capricon Travel','91222','capricontravel123');
+insert into `travel_agency` values(
+'1013','25','Scoprion Travel','91333','scorpiontravel666');
+insert into `travel_agency` values(
+'1014','22','Totem Travel','91555','totemtravel555');
+insert into `travel_agency` values(
+'1015','18','Golden Travel','91277','goldentravel111');
+
+
+
+
+
+
+
+
+insert into `discount` values(
+'1000','IBIBO10','10% Discount on Flight Bookings','3000','na');
+insert into `discount` values(
+'1001','COX14','14% Discount on Hotel Bookings','5000','na');
+insert into `discount` values(
+'1002','EASY05','5% Discount on Tour Bookings','2200','na');
+insert into `discount` values(
+'1003','MMT09','9% Discount on All Bookings','1500','na');
+insert into `discount` values(
+'1004','EXP20','20% Discount on Flight Bookings','6000','na');
+insert into `discount` values(
+'1005','WORLD10','10% Discount on Hotel Bookings','3200','na');
+insert into `discount` values(
+'1006','HAPPY30','30% Discount on Flight Bookings','9500','na');
+insert into `discount` values(
+'1007','WORLD10','15% Discount on Hotel Bookings','8900','na');
+insert into `discount` values(
+'1008','TRAVEL05','5% Discount on All Bookings','3500','na');
+insert into `discount` values(
+'1009','GEM25','25% Discount on Tour Bookings','9500','na');
+insert into `discount` values(
+'1010','ARIES20','20% Discount on Tour Bookings','8200','na');
+insert into `discount` values(
+'1011','LIBRA12','12% Discount on Flight Bookings','3100','na');
+insert into `discount` values(
+'1012','CAPRI7','7% Discount on Hotel Bookings','3200','na');
+insert into `discount` values(
+'1013','SCORPION25','25% Discount on Flight Bookings','6500','na');
+insert into `discount` values(
+'1014','TOTEM22','22% Discount on Hotel Bookings','7000','na');
+insert into `discount` values(
+'1015','GOLDEN18','18% Discount on Tour Bookings','6200','na');
+
+
+
+
+
+
+
+insert into `ticket` values(
+'0001','2522021','01','ECO10','ECONOMY','20000','1');
+insert into `ticket` values(
+'0002','2622021','02','ECO12','ECONOMY','12000','0');
+insert into `ticket` values(
+'0003','2722021','03','BUSS04','BUSINESS','80000','1');
+insert into `ticket` values(
+'0004','2822021','04','ECO18','ECONOMY','23000','0');
+insert into `ticket` values(
+'0005','0132021','05','ECO29','ECONOMY','15000','1');
+insert into `ticket` values(
+'0006','0312021','06','PREM10','PREMIUM','50000','1');
+insert into `ticket` values(
+'0007','0532021','07','BUSS21','BUSINESS','700000','1');
+insert into `ticket` values(
+'0008','0632021','08','FIRST41','FIRSTCLASS','200000','0');
+insert into `ticket` values(
+'0009','0932021','09','PREM12','PREMIUM','90000','0');
+insert into `ticket` values(
+'0010','1032021','10','FIRST44','FIRSTCLASS','225000','0');
+insert into `ticket` values(
+'0011','1232021','11','ECO30','ECONOMY','15000','1');
+insert into `ticket` values(
+'0012','1532021','12','ECO32','ECONOMY','19000','0');
+insert into `ticket` values(
+'0013','1832021','13','ECO55','ECONOMY','14000','1');
+insert into `ticket` values(
+'0014','2032021','14','FIRST44','FIRSTCLASS','300000','0');
+insert into `ticket` values(
+'0015','2232021','15','PREM32','PREMIUM','93000','1');
+
+insert into aircraft values(5,110,3,'2011-04-01');
+insert into aircraft values(6,80,4,'2013-09-26');
+insert into aircraft values(7,222,4,'2012-06-30');
+insert into aircraft values(8,240,7,'2017-08-15');
+insert into aircraft values(9,125,5,'2016-02-13');
+insert into aircraft values(10,150,5,'2018-07-24');
+insert into aircraft values(11,120,6,'2019-01-17');
+insert into aircraft values(12,105,9,'2013-08-29');
+insert into aircraft values(13,198,8,'2006-05-03');
+insert into aircraft values(14,200,8,'2009-04-28');
+insert into aircraft values(15,85,9,'2008-03-01');
+insert into aircraft values(16,90,10,'2010-07-15');
+insert into aircraft values(17,50,11,'2011-03-17');
+insert into aircraft values(18,145,13,'2005-02-28');
+insert into aircraft values(19,130,13,'2020-01-18');
+insert into aircraft values(20,195,12,'2020-09-24');
+
+
+
+insert into airline values(2,"Australia Asia Airlines","Australia",30,'fdse23'),
+(3,"Air Cess","Liberia",45,'fdse23'),
+(4,"Air Aurora","United States",50,'fdse23'),
+(5,"Air Cargo Transportation System","Kenya",19,"jhhvsd92"),
+(6,"Air Charter Service","United Kingdom",23,"dsd7"),
+(7,"Aero Asia International","Pakistan",39,"Gsht67"),
+(8,"Air Charters","Canada",53,"dcgsd98"),
+(9,"Air Togo",'New Zealand',47,"2hgr7"),
+(10,"Atlas Cargo Lines","Morocco",21,"sd6d4"),
+(11,"Air Sahara","India",28,"sdvgrdg8"),
+(12,"Alliance Air","India",40,"gyjd7"),
+(13,"Deccan Aviation","India",32,"sdgadh3w"),
+(14,"Go Air","India",31,"sdgave7"),
+(15,"Jet Airways","India",21,"dsg45qtrwq"),
+(16,"Panagra Airways","United States",12,"f345qr"),
+(17,"Petty Transport","United States",45,"R34RGDS"),
+(18,"Red Aviation","United States",59,"dsgae38");
+
+
+insert into airport values(1,"St Angelo Airport","London","United Kingdom",3,'fdse23');
+insert into airport values(2,"St George Airport","Anchorage","United States",1,"1fsdaf3"),
+(3,"Twentynine Palms (Self) Airport","Los_Angeles","United States",2,"21njn323"),
+(4,"Mobile Downtown Airport","Chicago","United States",16,"4jhb43"),
+(5,"Agra Airport","Agra","India",17,"sjkfhiei6"),
+(6,"Allahabad Airport","Allahabad","India",18,"gjv7hjv8"),
+(7,"Sri Guru Ram Dass Jee International Airport","Amritsar","India",19,"sfu4b44j"),
+(8,"Nal Airport","Bikaner","India",20,"sdkfdbu4"),
+(9,"Lal Bahadur Shastri Airport","Varanasi","India",21,"bfsbf3j"),
+(10,"Kullu Manali Airport","Kullu","India",23,"sdfsgdfgw4"),
+(11,"Chandigarh Airport","Chandigarh","India",22,"gjhdsg34h"),
+(12,"Jhansi Airport","Jhansi","India",24,"sdfjwebjq"),
+(13,"Gwalior Airport","Gwalior","India",25,"dxgjnrkjgb"),
+(14,"Indira Gandhi International Airport","Delhi","India",8,"12dsfa3"),
+(15,"Hissar Airport","Hissar","India",26,"dagdft5"),
+(16,"Jaipur International Airport","Jaipur","India",28,"dagd4353"),
+(17,"Faisalabad International Airport","Faisalabad","Pakistan",27,"cbsf4"),
+(18,"Sault Ste Marie Airport","Sault Ste Marie","Canada",29,"yv5kbyj34y"),
+(19,"Auckland International Airport","Auckland","New Zealand",30,"jvbjhvjyek7746"),
+(20,"Tan Tan Airport","Tan Tan","Morocco",31,"jsdbf4j5b");
+
+INSERT INTO `flight_schedule` 
+(`flight_id`, `departure`, `arrival`, `date`, `origin`, `destination`, `route_code`, `Airfare`) 
+VALUES (2, 2, 1, '2021-03-28', india, thailand, 'tmry', 2000);
+INSERT INTO `flight_schedule` 
+(`flight_id`, `departure`, `arrival`, `date`, `origin`, `destination`, `route_code`, `Airfare`)
+ VALUES (1, 7, 8, '2021-03-09', india, australia, 'khec', 1500);
+INSERT INTO `flight_schedule`
+ (`flight_id`, `departure`, `arrival`, `date`, `origin`, `destination`, `route_code`, `Airfare`) 
+ VALUES (4, 9, 8, ,2021-04-12', australia, india, 'vtzg', 5000);
+INSERT INTO `flight_schedule`
+ (`flight_id`, `departure`, `arrival`, `date`, `origin`, `destination`, `route_code`, `Airfare`) 
+ VALUES (5, 5, 4, '1921-03-26', india, america, 'cznz', 6000);
+INSERT INTO `flight_schedule` 
+(`flight_id`, `departure`, `arrival`, `date`, `origin`, `destination`, `route_code`, `Airfare`) 
+VALUES (6, 7, 7, '2021-04-07', pakistan, india, 'ffch', 2200);
+INSERT INTO `flight_schedule` 
+(`flight_id`, `departure`, `arrival`, `date`, `origin`, `destination`, `route_code`, `Airfare`) 
+VALUES (7, 8, 3, '2020-03-17', india, nepal, 'jntf', 3000);
+INSERT INTO `flight_schedule` 
+(`flight_id`, `departure`, `arrival`, `date`, `origin`, `destination`, `route_code`, `Airfare`) 
+VALUES (8, 4, 4, '2021-3-24', delhi, goa, 'evpq', 1500);
+INSERT INTO `flight_schedule` 
+(`flight_id`, `departure`, `arrival`, `date`, `origin`, `destination`, `route_code`, `Airfare`) 
+VALUES (9, 7, 1, '2021-4-24', united kingdom, canada, 'wsqa',2500);
+INSERT INTO `flight_schedule` 
+(`flight_id`, `departure`, `arrival`, `date`, `origin`, `destination`, `route_code`, `Airfare`) 
+VALUES (12, 1, 8, '2021-3-18', new zealand, india, 'anlw', 5500);
+INSERT INTO `flight_schedule` 
+(`flight_id`, `departure`, `arrival`, `date`, `origin`, `destination`, `route_code`, `Airfare`)
+ VALUES (26, 2, 2, '2021-3-27',australia , china, 'foji', 5000);
+INSERT INTO `flight_schedule` 
+(`flight_id`, `departure`, `arrival`, `date`, `origin`, `destination`, `route_code`, `Airfare`) 
+VALUES (27, 7, 1, '2021-3-15', bangladesh, sri lanka, 'xqgg', 3100);
+INSERT INTO `flight_schedule` 
+(`flight_id`, `departure`, `arrival`, `date`, `origin`, `destination`, `route_code`, `Airfare`)
+ VALUES (33, 4, 9, '2021-3-24', poland, iceland, 'ziir', 3500);
+INSERT INTO `flight_schedule` 
+(`flight_id`, `departure`, `arrival`, `date`, `origin`, `destination`, `route_code`, `Airfare`)
+ VALUES (36, 5, 5, ,2021-3-05', india , dubai, 'wwjy', 2200);
+
+
+
+INSERT INTO `contact_details` VALUES (1, '346-813-2995', '1-803-468-3355', 'alex@hotmail.com','12','Hill St','3','Manhattan','New York','10001','USA');
+INSERT INTO `contact_details` VALUES (2, '987-035-2889', '1-786-050-4082', 'sam67@gmail.com', '4','Main St','1','Kirby','Texas','78219','USA');
+INSERT INTO `contact_details` VALUES (3, '928.044.9515', '1-109-696-2052', 'sarah@gmail.com', '5','Second St','2','London','London','11112','UK');
+INSERT INTO `contact_details` VALUES (4, '629-631-4980', '1-508-840-2721', 'greenholt@gmail.com', '9','Hill St','3','Toronto','Ontario','10001','Cananda');
+INSERT INTO `contact_details` VALUES (5, '822-872-3751', '1-490-573-8493', 'justin@hotmail.com', '22','First St','3','Manhattan','New York','10001','USA');
+INSERT INTO `contact_details` VALUES (6, '758-963-6852', '1-973-733-5791', 'vanshika@gmail.com', '32','Khan Market','9','New Delhi','New Delhi','11002','India');
+INSERT INTO `contact_details` VALUES (7, '507-889-4345', '1-357-975-2734', 'manvik@gmail.com', '42','Hudson Lane','4','New Delhi','New Delhi','11004','India');
+INSERT INTO `contact_details` VALUES (8, '128-302-8983', '1-934-106-3413', 'ritesh@gmail.com', '31','Janpath','12','New Delhi','New Delhi','11005','India');
+INSERT INTO `contact_details` VALUES (9, '164-392-4867', '1-632-882-1370', 'kunal@yahoo.com', '55','Malviya Nagar','10','New Delhi','New Delhi','110020','India');
+INSERT INTO `contact_details` VALUES (10, '956-813-6000', '1-978-174-3790', 'yugansh@hotmail.com', '44','Rajinder Nagar','16','New Delhi','New Delhi','110015','India');
+insert into `contact_details` values('11','123-983-3111','855-632-5412',"LeonardCooper@gmail.com",'1','Delli','3','Rhode Island','USA',1100240,'America');
+insert into `contact_details` values('12','123-986-6111','',"Jessica@gmail.com",'5','Square mark','3','Washingtion','USA',1100241,'America');
+insert into `contact_details` values('13','123-984-4111','',"Louis@gmail.com",'10','Nebraska','7','Kirby','USA',1100241,'America');
+insert into `contact_details` values('14','123-999-3111','',"Akon@gmail.com",'11','Cape 1','6','Northern cape','South Africa',1100241,'Africa');
+insert into `contact_details` values
+('15','123-983-2111','',"jean@gmail.com",'15','Paris lane 1','4','Paris','Paris','1100241','France');
+INSERT INTO `contact_details` VALUES (0,'(668)890-7914','(339)852-0983','kilback.ashleigh@example.com','26','Boehm Walk','03636',"Anchorage","Alaska",99505,"United States"),
+(16,'07776561023','1-458-012-8906x1','tanya40@example.net','61','Deckow Club','779',"Chicago","Illinois",03652,"United States"),
+(17,'358-641-9471','035-547-0211x718','dhuels@example.org','20','Micaela Village','246',"Agra","UP",282002,"India"),
+(18,'1-389-640-4027x0','05473053626','kory48@example.net','052','Kuhlman Centers','0754',"Allahbad","UP",282032,"India"),
+(19,'+57(5)7430276612','+80(8)1958507608','schumm.kaya@example.com','56','Justen Bypass','2804',"Amritsar","Punjab",282031,"India"),
+(20,'095.688.9553x572','365.411.7691','marianna.terry@example.net','77','Mary Forest','7539',"Bikaner","Rajasthan",282071,"India"),
+(21,'1-021-216-6552','1-995-476-9018x6','eliseo52@example.net','18','Darby Wells','792',"Varanasi","UP",282005,"India"),
+(22,'(837)450-7711x89','+88(9)3647651227','selena.predovic@example.com','167','Bruen Row','15186',"Kullu","Himachal Pradesh",285623,"India"),
+(23,'(024)551-0137x31','1-883-382-4901','eabernathy@example.org','41','Ora Valleys','361',"Chandigarh","UT",282054,"India"),
+(24,'412.130.1106x558','05919469604','uhermann@example.net','905','Madelynn Gateway','5063',"Jhansi","UP",2823248,"India"),
+(25,'1-480-863-2792x1','(721)504-0430','xander00@example.org','35','Farrell Knolls','8527',"Gwalior","MP",231002,"India"),
+(26,'01341782479','270-072-0727x985','kmurray@example.com','170','Hallie Common','8714',"Delhi","UT",110045,"India"),
+(27,'(488)399-6918x36','(776)379-4821x97','isom.erdman@example.org','89','Kris Rue','57769',"Hissar","HR",240025,"India"),
+(28,'+96(7)3076761291','00797859821','robel.lewis@example.com','882','Billie Falls','441',"Jaipur","Rajasthan",282002,"India"),
+(29,'798-986-4744x749','(049)781-1532x21','reichel.mateo@example.net','092','Cormier Grove','235',"Faisalabad","Karachi",192002,"Pakistan"),
+(30,'05510293872','913.490.7497x321','cfarrell@example.org','201','Erick Plain','0566'"Auckland","Wellington",102002,"New Zealand"),
+(31,'255-727-8110','(479)746-0424','presley36@example.com','50','Sheila Roads','987'"Tantan","Walah",272002,"Morrocco");
+
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (32, 'Darrick', 'Spinka', 'jovani.littel@example.com', '1974-11-08', '2016-08-12 02:39:50');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (33, 'Marilyne', 'Gorczany', 'eugenia.stehr@example.net', '1980-11-28', '1970-10-13 12:49:32');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (34, 'Astrid', 'Mohr', 'kaitlin45@example.com', '2019-09-27', '1975-06-15 14:36:05');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (35, 'Arvid', 'Kiehn', 'emmalee66@example.org', '1990-04-03', '1991-10-19 17:16:33');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (36, 'Dixie', 'Bruen', 'darrick51@example.com', '1993-05-12', '1980-07-08 07:49:06');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (37, 'Nathen', 'O\'Connell', 'malcolm65@example.net', '2011-11-03', '1972-10-10 10:18:34');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (38, 'Rosemary', 'Maggio', 'cgorczany@example.net', '1974-04-15', '2007-01-21 12:02:57');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (39, 'Elijah', 'Haley', 'brady83@example.org', '2018-09-04', '1992-03-19 14:47:23');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (40, 'Kara', 'Kshlerin', 'armstrong.victor@example.net', '1982-02-02', '2007-04-14 15:43:00');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (41, 'Alysa', 'Cormier', 'zritchie@example.org', '1992-01-28', '1990-09-03 01:35:34');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (42, 'Linnea', 'Jaskolski', 'drippin@example.com', '2006-08-27', '2018-06-26 16:07:42');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (43, 'Kyla', 'Ratke', 'ehintz@example.com', '2018-10-24', '1981-01-27 13:18:24');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (44, 'Emory', 'Wuckert', 'jaleel86@example.com', '1998-01-08', '1987-08-10 12:35:56');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (45, 'Alicia', 'O\'Keefe', 'rhaag@example.com', '1977-10-29', '1980-08-28 02:16:42');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (46, 'Misty', 'Smith', 'price.jameson@example.net', '2018-05-03', '2012-06-28 04:31:35');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (47, 'Shakira', 'Kris', 'goyette.bernice@example.org', '1978-11-08', '2013-09-10 20:08:47');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (48, 'Fermin', 'Homenick', 'little.mose@example.net', '2005-10-11', '1976-12-09 03:54:23');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (49, 'Lindsey', 'Zulauf', 'rconnelly@example.org', '2018-06-06', '1994-07-20 03:54:30');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (50, 'Nikolas', 'Brown', 'feil.carmen@example.net', '1996-11-09', '2006-02-19 11:37:32');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (51, 'Orlando', 'Stark', 'trogahn@example.net', '1989-01-04', '2016-10-23 12:53:29');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (52, 'Kavon', 'Schuster', 'america.greenholt@example.net', '2009-12-13', '1987-06-26 01:43:50');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (53, 'Keanu', 'Yost', 'osinski.florence@example.org', '2008-07-17', '2019-09-03 05:44:40');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (54, 'Molly', 'Collier', 'millie.legros@example.net', '2011-04-07', '1971-11-20 23:45:43');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (55, 'Oscar', 'O\'Kon', 'borer.era@example.org', '2002-05-30', '1988-04-18 08:25:29');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (56, 'Dan', 'Auer', 'dmorissette@example.com', '2014-05-14', '1975-07-10 01:10:04');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (57, 'Jenifer', 'Fadel', 'yasmeen01@example.com', '1970-11-14', '2017-09-05 07:49:47');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (58, 'Hailie', 'Keeling', 'zechariah77@example.net', '1995-12-07', '2006-02-26 04:54:32');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (59, 'Waylon', 'Kohler', 'joanny.kozey@example.com', '1982-07-29', '1977-11-11 00:27:02');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (60, 'Libby', 'Kuhic', 'emanuel33@example.org', '1977-12-22', '1997-02-05 13:18:59');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (61, 'Sofia', 'Mayer', 'jessika.koch@example.com', '2016-12-12', '1998-09-21 12:37:49');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (62, 'Major', 'Strosin', 'ward.lia@example.com', '2011-08-27', '1977-05-26 17:17:05');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (63, 'Meghan', 'Aufderhar', 'wilkinson.theresa@example.net', '2018-03-05', '1974-09-24 01:08:57');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (64, 'Anastasia', 'Hills', 'rath.alta@example.net', '1985-12-03', '1983-09-28 12:46:53');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (65, 'Deja', 'Wolf', 'elroy34@example.com', '1971-08-25', '2018-08-13 07:08:33');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (66, 'Ramona', 'Hudson', 'monahan.edgar@example.net', '2018-10-04', '2019-04-21 01:51:02');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (67, 'Izaiah', 'Yundt', 'willard59@example.com', '1989-07-24', '1980-08-31 02:22:22');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (68, 'Lora', 'Wyman', 'grimes.marge@example.org', '2003-02-23', '2002-03-14 17:58:25');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (69, 'Audie', 'Hudson', 'nigel.crist@example.org', '1985-01-19', '1983-07-28 14:15:02');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (70, 'Lenore', 'Conroy', 'btowne@example.com', '2006-03-27', '2013-08-03 20:15:19');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (71, 'Efren', 'Beatty', 'francesca.ledner@example.net', '2012-01-12', '1989-12-07 23:22:55');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (72, 'Clemens', 'Hilpert', 'sanford.nettie@example.org', '1977-01-26', '2018-02-12 21:12:27');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (73, 'Elmira', 'Douglas', 'oma93@example.org', '1990-11-29', '1970-12-27 13:51:24');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (74, 'Valentin', 'Leffler', 'aliya.hickle@example.org', '1972-04-30', '1978-08-28 01:39:54');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (75, 'Xzavier', 'Mohr', 'sean.kub@example.org', '1988-03-22', '1971-03-18 16:56:30');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (76, 'Marilyne', 'Zboncak', 'mann.ida@example.org', '1992-10-04', '1973-04-16 03:05:27');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (77, 'Cara', 'Skiles', 'gutkowski.camden@example.net', '2015-08-05', '1973-12-20 13:14:29');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (78, 'Aaliyah', 'Hagenes', 'nbauch@example.net', '1999-10-01', '1995-11-14 21:32:42');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (79, 'Fermin', 'Moore', 'zulauf.levi@example.com', '1978-08-08', '1999-09-25 15:10:07');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (80, 'Mabelle', 'Okuneva', 'fleta.klocko@example.org', '1983-05-07', '1983-07-02 13:51:12');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (81, 'Lindsay', 'Gibson', 'claudia50@example.org', '1989-07-24', '1987-07-13 15:37:15');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (82, 'Linwood', 'Kohler', 'rosinski@example.org', '2009-05-17', '1983-07-26 00:24:52');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (83, 'America', 'Emmerich', 'angus41@example.org', '1978-03-09', '2015-01-21 22:11:47');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (84, 'Weston', 'Reynolds', 'little.madaline@example.net', '2009-01-26', '1975-03-21 23:28:28');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (85, 'Milton', 'Kulas', 'bill97@example.com', '1975-04-29', '2015-06-14 04:00:38');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (86, 'Malachi', 'Hettinger', 'golden55@example.com', '1987-02-23', '1971-11-09 01:04:06');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (87, 'Tabitha', 'Bernier', 'jacobson.earnestine@example.org', '1974-03-31', '2015-10-03 08:52:17');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (88, 'Dahlia', 'Gerhold', 'mann.gillian@example.org', '2007-11-15', '1984-10-24 09:15:50');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (89, 'Verda', 'Kerluke', 'cleta14@example.net', '2007-09-24', '2016-05-25 19:15:58');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (90, 'Ramiro', 'Balistreri', 'mckenzie.nella@example.org', '2011-03-07', '2017-05-06 20:21:55');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (91, 'Mazie', 'Konopelski', 'rwaelchi@example.net', '2017-10-03', '1994-06-23 17:48:05');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (92, 'Caroline', 'Bruen', 'rigoberto28@example.net', '1986-01-22', '1990-01-23 05:18:01');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (93, 'Rhea', 'Carter', 'astamm@example.net', '1974-11-09', '1999-07-21 11:37:01');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (94, 'Felipa', 'Wolf', 'fsanford@example.org', '1971-03-31', '2006-03-22 23:14:03');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (95, 'Arnulfo', 'Franecki', 'cassie.ryan@example.net', '1997-07-16', '1976-03-02 22:07:05');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (96, 'Maryse', 'Purdy', 'xander96@example.org', '1974-07-26', '1985-02-27 02:07:42');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (97, 'Wilfrid', 'Roberts', 'joe50@example.net', '1998-08-28', '1980-11-08 05:51:18');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (98, 'Hanna', 'Lynch', 'rosalee.rowe@example.com', '1997-04-14', '2007-05-01 00:56:43');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (99, 'Zora', 'Lowe', 'dach.israel@example.net', '1997-05-19', '2004-10-25 12:56:01');
+INSERT INTO `authors` (`id`, `first_name`, `last_name`, `email`, `birthdate`, `added`) VALUES (100, 'Alysa', 'Jones', 'dereck.crist@example.com', '1983-04-01', '2001-09-25 07:52:35');
+
+
+
+alter table `aircraft` add foreign key(`company`) references `airline`(`name`);
+alter table `airport` add foreign key(`contact`) references `contact_details`(`c_id`);
+
+alter table `passenger` add foreign key(`contact`) references `contact_details`(`c_id`);
+
+alter table `travel_agency` add foreign key(`discount`) references `discount`(`amount`);
+alter table `travel_agency` add foreign key(`contact`) references `contact_details`(`c_id`);
+
+alter table `discount` add foreign key(`travelag_id`) references `travel_agency`(`travelag_id`);
+
+alter table `ticket` add foreign key(`flight_schedule`) references `flight_schedule`;
+alter table `ticket` add foreign key(`passenger_id`) references `passenger`(`p_id`);
+alter table `ticket` add foreign key(`airfare`) references `airfare`(`fare`);
+
+alter table `flight_schedule` add foreign key(`flight_id`) references `aircraft`(`ac_id`);
+alter table `flight_schedule` add foreign key(`origin`) references `airport`(`ap_id`);
+alter table `flight_schedule` add foreign key(`destination`) references `airport`(`ap_id`);
+
+alter table `airfare` add foreign key(`route_code`) references `flight_schedule`(`route_code`);
+alter table `airfare` add foreign key(`discount`) references `discount`(`amount`);
+
+alter table `transactions` add foreign key(`ticket`) references `ticket`(`t_id`);
+alter table `transactions` add foreign key(`p_id`) references `passenger`(`p_id`);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
